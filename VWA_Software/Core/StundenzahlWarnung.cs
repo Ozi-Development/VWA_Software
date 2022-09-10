@@ -11,27 +11,33 @@ namespace VWA_Software.Core
     internal class StundenzahlWarnung
     {
         private int _stundenzahl;
+        private bool _stundenzahlBool;
+
+        public bool StundenzahlBool
+        {
+            get { return _stundenzahlBool; }
+            set { _stundenzahlBool = value; }
+        }
 
         public int Stundenzahl
         {
             get { return _stundenzahl; }
-            set
-            {
-                _stundenzahl = value;
-                CheckStundenzahl();
-            }
+            set { _stundenzahl = value; }
         }
 
-        private void CheckStundenzahl()
+        public void CheckStundenzahl()
         {
-            if (_stundenzahl == 8)
-            {
-                MessageBox.Show("Du hast die benötigte Stundenzahl erreicht.\nAlle weiteren Wahlpflichtfächer sind FREIWILLIG!", "Fast geschafft", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-
             if (_stundenzahl > 8)
             {
-                MessageBox.Show("Du hast zu viele Wahlpflichtfächer ausgewählt!\nBist du sicher, dass du fortfahren möchtest?", "Warnung", MessageBoxButton.YesNo, MessageBoxImage.Hand);
+                // Anpassung am Text ??
+                if (MessageBox.Show("Du hast zu viele Wahlpflichtfächer ausgewählt!\nDu hast aktuell " + _stundenzahl + " Stunden ausgewählt\nBist du sicher, dass du fortfahren möchtest?", "Warnung", MessageBoxButton.YesNo, MessageBoxImage.Hand) == MessageBoxResult.No)
+                {
+                    _stundenzahlBool = true;
+                }
+                else
+                {
+                    _stundenzahlBool = false;
+                }
             }
         }
     }
