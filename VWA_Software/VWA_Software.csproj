@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -69,7 +72,6 @@
     </Compile>
     <Compile Include="Core\CheckAndDisable.cs" />
     <Compile Include="Core\DisableSubjects.cs" />
-    <Compile Include="Core\Klasse6_Klasse7.cs" />
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="Core\StundenzahlWarnung.cs" />
@@ -160,6 +162,9 @@
   <ItemGroup>
     <Resource Include="Images\Logo.png" />
     <Resource Include="Images\Logo_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,6 +9,10 @@ using VWA_Software.MVVM.View;
 
 namespace VWA_Software.Core
 {
+    /// <summary>
+    /// May not work because i cannot controll controlls outside of SelectionView.xaml.cs
+    /// </summary>
+
     internal class DisableSubjects
     {
         SelectionView selectionView = new SelectionView();
