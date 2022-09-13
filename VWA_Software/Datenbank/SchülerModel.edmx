@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="VWA_DatenbankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Ausnahmen_Tabelle">
+          <Key>
+            <PropertyRef Name="Ausnahme_ID" />
+          </Key>
+          <Property Name="Ausnahme_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Schüler" Type="int" />
+          <Property Name="BE_Pflichtfach" Type="bit" Nullable="false" />
+          <Property Name="Französisch_Pflichtfach" Type="bit" Nullable="false" />
+          <Property Name="Italienisch_Pflichtfach" Type="bit" Nullable="false" />
+          <Property Name="Latein_Pflichtfach" Type="bit" Nullable="false" />
+          <Property Name="Religion_Pflichtfach" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Schüler_Tabelle">
+          <Key>
+            <PropertyRef Name="Schüler_ID" />
+          </Key>
+          <Property Name="Schüler_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vorname" Type="varchar" MaxLength="255" />
+          <Property Name="Nachname" Type="varchar" MaxLength="255" />
+          <Property Name="Klasse" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="Wahlpflichtfächer_Tabelle">
+          <Key>
+            <PropertyRef Name="Wahlpflichtfach_ID" />
+          </Key>
+          <Property Name="Wahlpflichtfach_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Schüler" Type="int" />
+          <Property Name="Wahlpflichtfach_1" Type="varchar" MaxLength="255" />
+          <Property Name="Wahlpflichtfach_2" Type="varchar" MaxLength="255" />
+          <Property Name="Wahlpflichtfach_3" Type="varchar" MaxLength="255" />
+          <Property Name="Wahlpflichtfach_4" Type="varchar" MaxLength="255" />
+          <Property Name="Wahlpflichtfach_5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK_Ausnahmen_Schüler">
+          <End Role="Schüler_Tabelle" Type="Self.Schüler_Tabelle" Multiplicity="0..1" />
+          <End Role="Ausnahmen_Tabelle" Type="Self.Ausnahmen_Tabelle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schüler_Tabelle">
+              <PropertyRef Name="Schüler_ID" />
+            </Principal>
+            <Dependent Role="Ausnahmen_Tabelle">
+              <PropertyRef Name="Schüler" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Wahlpflichtfächer_Schüler">
+          <End Role="Schüler_Tabelle" Type="Self.Schüler_Tabelle" Multiplicity="0..1" />
+          <End Role="Wahlpflichtfächer_Tabelle" Type="Self.Wahlpflichtfächer_Tabelle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schüler_Tabelle">
+              <PropertyRef Name="Schüler_ID" />
+            </Principal>
+            <Dependent Role="Wahlpflichtfächer_Tabelle">
+              <PropertyRef Name="Schüler" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VWA_DatenbankModelStoreContainer">
+          <EntitySet Name="Ausnahmen_Tabelle" EntityType="Self.Ausnahmen_Tabelle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Schüler_Tabelle" EntityType="Self.Schüler_Tabelle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wahlpflichtfächer_Tabelle" EntityType="Self.Wahlpflichtfächer_Tabelle" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Ausnahmen_Schüler" Association="Self.FK_Ausnahmen_Schüler">
+            <End Role="Schüler_Tabelle" EntitySet="Schüler_Tabelle" />
+            <End Role="Ausnahmen_Tabelle" EntitySet="Ausnahmen_Tabelle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Wahlpflichtfächer_Schüler" Association="Self.FK_Wahlpflichtfächer_Schüler">
+            <End Role="Schüler_Tabelle" EntitySet="Schüler_Tabelle" />
+            <End Role="Wahlpflichtfächer_Tabelle" EntitySet="Wahlpflichtfächer_Tabelle" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VWA_DatenbankModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Ausnahmen_Tabelle">
+          <Key>
+            <PropertyRef Name="Ausnahme_ID" />
+          </Key>
+          <Property Name="Ausnahme_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Schüler" Type="Int32" />
+          <Property Name="BE_Pflichtfach" Type="Boolean" Nullable="false" />
+          <Property Name="Französisch_Pflichtfach" Type="Boolean" Nullable="false" />
+          <Property Name="Italienisch_Pflichtfach" Type="Boolean" Nullable="false" />
+          <Property Name="Latein_Pflichtfach" Type="Boolean" Nullable="false" />
+          <Property Name="Religion_Pflichtfach" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Schüler_Tabelle" Relationship="Self.FK_Ausnahmen_Schüler" FromRole="Ausnahmen_Tabelle" ToRole="Schüler_Tabelle" />
+        </EntityType>
+        <EntityType Name="Schüler_Tabelle">
+          <Key>
+            <PropertyRef Name="Schüler_ID" />
+          </Key>
+          <Property Name="Schüler_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vorname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Nachname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Klasse" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Ausnahmen_Tabelle" Relationship="Self.FK_Ausnahmen_Schüler" FromRole="Schüler_Tabelle" ToRole="Ausnahmen_Tabelle" />
+          <NavigationProperty Name="Wahlpflichtfächer_Tabelle" Relationship="Self.FK_Wahlpflichtfächer_Schüler" FromRole="Schüler_Tabelle" ToRole="Wahlpflichtfächer_Tabelle" />
+        </EntityType>
+        <EntityType Name="Wahlpflichtfächer_Tabelle">
+          <Key>
+            <PropertyRef Name="Wahlpflichtfach_ID" />
+          </Key>
+          <Property Name="Wahlpflichtfach_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Schüler" Type="Int32" />
+          <Property Name="Wahlpflichtfach_1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Wahlpflichtfach_2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Wahlpflichtfach_3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Wahlpflichtfach_4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Wahlpflichtfach_5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Schüler_Tabelle" Relationship="Self.FK_Wahlpflichtfächer_Schüler" FromRole="Wahlpflichtfächer_Tabelle" ToRole="Schüler_Tabelle" />
+        </EntityType>
+        <Association Name="FK_Ausnahmen_Schüler">
+          <End Role="Schüler_Tabelle" Type="Self.Schüler_Tabelle" Multiplicity="0..1" />
+          <End Role="Ausnahmen_Tabelle" Type="Self.Ausnahmen_Tabelle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schüler_Tabelle">
+              <PropertyRef Name="Schüler_ID" />
+            </Principal>
+            <Dependent Role="Ausnahmen_Tabelle">
+              <PropertyRef Name="Schüler" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Wahlpflichtfächer_Schüler">
+          <End Role="Schüler_Tabelle" Type="Self.Schüler_Tabelle" Multiplicity="0..1" />
+          <End Role="Wahlpflichtfächer_Tabelle" Type="Self.Wahlpflichtfächer_Tabelle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schüler_Tabelle">
+              <PropertyRef Name="Schüler_ID" />
+            </Principal>
+            <Dependent Role="Wahlpflichtfächer_Tabelle">
+              <PropertyRef Name="Schüler" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VWA_DatenbankEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ausnahmen_Tabelle" EntityType="Self.Ausnahmen_Tabelle" />
+          <EntitySet Name="Schüler_Tabelle" EntityType="Self.Schüler_Tabelle" />
+          <EntitySet Name="Wahlpflichtfächer_Tabelle" EntityType="Self.Wahlpflichtfächer_Tabelle" />
+          <AssociationSet Name="FK_Ausnahmen_Schüler" Association="Self.FK_Ausnahmen_Schüler">
+            <End Role="Schüler_Tabelle" EntitySet="Schüler_Tabelle" />
+            <End Role="Ausnahmen_Tabelle" EntitySet="Ausnahmen_Tabelle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Wahlpflichtfächer_Schüler" Association="Self.FK_Wahlpflichtfächer_Schüler">
+            <End Role="Schüler_Tabelle" EntitySet="Schüler_Tabelle" />
+            <End Role="Wahlpflichtfächer_Tabelle" EntitySet="Wahlpflichtfächer_Tabelle" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VWA_DatenbankModelStoreContainer" CdmEntityContainer="VWA_DatenbankEntities">
+          <EntitySetMapping Name="Ausnahmen_Tabelle">
+            <EntityTypeMapping TypeName="VWA_DatenbankModel.Ausnahmen_Tabelle">
+              <MappingFragment StoreEntitySet="Ausnahmen_Tabelle">
+                <ScalarProperty Name="Ausnahme_ID" ColumnName="Ausnahme_ID" />
+                <ScalarProperty Name="Schüler" ColumnName="Schüler" />
+                <ScalarProperty Name="BE_Pflichtfach" ColumnName="BE_Pflichtfach" />
+                <ScalarProperty Name="Französisch_Pflichtfach" ColumnName="Französisch_Pflichtfach" />
+                <ScalarProperty Name="Italienisch_Pflichtfach" ColumnName="Italienisch_Pflichtfach" />
+                <ScalarProperty Name="Latein_Pflichtfach" ColumnName="Latein_Pflichtfach" />
+                <ScalarProperty Name="Religion_Pflichtfach" ColumnName="Religion_Pflichtfach" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schüler_Tabelle">
+            <EntityTypeMapping TypeName="VWA_DatenbankModel.Schüler_Tabelle">
+              <MappingFragment StoreEntitySet="Schüler_Tabelle">
+                <ScalarProperty Name="Schüler_ID" ColumnName="Schüler_ID" />
+                <ScalarProperty Name="Vorname" ColumnName="Vorname" />
+                <ScalarProperty Name="Nachname" ColumnName="Nachname" />
+                <ScalarProperty Name="Klasse" ColumnName="Klasse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wahlpflichtfächer_Tabelle">
+            <EntityTypeMapping TypeName="VWA_DatenbankModel.Wahlpflichtfächer_Tabelle">
+              <MappingFragment StoreEntitySet="Wahlpflichtfächer_Tabelle">
+                <ScalarProperty Name="Wahlpflichtfach_ID" ColumnName="Wahlpflichtfach_ID" />
+                <ScalarProperty Name="Schüler" ColumnName="Schüler" />
+                <ScalarProperty Name="Wahlpflichtfach_1" ColumnName="Wahlpflichtfach_1" />
+                <ScalarProperty Name="Wahlpflichtfach_2" ColumnName="Wahlpflichtfach_2" />
+                <ScalarProperty Name="Wahlpflichtfach_3" ColumnName="Wahlpflichtfach_3" />
+                <ScalarProperty Name="Wahlpflichtfach_4" ColumnName="Wahlpflichtfach_4" />
+                <ScalarProperty Name="Wahlpflichtfach_5" ColumnName="Wahlpflichtfach_5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
