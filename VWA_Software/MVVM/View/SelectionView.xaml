@@ -146,19 +146,19 @@
               Width="140"
               HorizontalAlignment="Stretch"
               x:Name="GruppeB_1">
+            
+            
             <TreeView x:Name="testName">
                 <TreeViewItem Header="Religion"
                               Style="{StaticResource B_ReligionTheme}">
                     <CheckBox Content="6. Klasse"
                               x:Name="chkReligion_6"
                               Checked="chkReligion_6_Checked"
-                              Unchecked="chkReligion_6_Unchecked"
-                              x:FieldModifier="public"/>
+                              Unchecked="chkReligion_6_Unchecked"/>
                     <CheckBox Content="7. Klasse"
                               x:Name="chkReligion_7"
                               Checked="chkReligion_7_Checked"
-                              Unchecked="chkReligion_7_Unchecked"
-                              x:FieldModifier="public"/>
+                              Unchecked="chkReligion_7_Unchecked"/>
                     <CheckBox Content="8. Klasse"
                               x:Name="chkReligion_8"
                               Checked="chkReligion_8_Checked"
