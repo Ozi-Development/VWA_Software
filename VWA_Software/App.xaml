@@ -5,7 +5,7 @@
              xmlns:viewModel="clr-namespace:VWA_Software.MVVM.ViewModel"
              xmlns:view="clr-namespace:VWA_Software.MVVM.View"
 
-             StartupUri="MainWindow.xaml">
+             StartupUri="LoginWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <DataTemplate DataType="{x:Type viewModel:SelectionViewModel}">

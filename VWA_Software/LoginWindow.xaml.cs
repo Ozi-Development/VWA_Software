@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using VWA_Software.Datenbank;
 
 namespace VWA_Software
 {
@@ -30,9 +31,31 @@ namespace VWA_Software
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
+            using (VWA_DatenbankEntities datenbankEntities = new VWA_DatenbankEntities())
+            {
+                string vorname = tbVorname.Text;
+                string nachname = tbNachname.Text;
+                string passwort = pwdPasswort.Password;
+
+                var query = from Schüler in datenbankEntities.Schüler_Tabelle
+                            where Schüler.Vorname == vorname && Schüler.Nachname == nachname /*&& Schüler.Passwort == passwort*/
+                            select Schüler;
+
+                if (query.Any())
+                {
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    this.Close();
+                }
+                else if (String.IsNullOrEmpty(vorname) || String.IsNullOrEmpty(nachname)/* || String.IsNullOrEmpty(passwort)*/)
+                {
+                    MessageBox.Show("Bitte gib einen gülltigen Namen oder ein gülltiges Passwort ein!");
+                }              
+                else
+                {
+                    MessageBox.Show("Falsches Passwort oder falscher Name!");
+                }
+            }
         }
 
         private void Close(object sender, RoutedEventArgs e)

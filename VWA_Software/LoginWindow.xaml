@@ -91,10 +91,10 @@
                          VerticalAlignment="Center"
                          HorizontalAlignment="Center"
                          Grid.Row="1"                         
-                         Style="{StaticResource LoginPasswordBoxTheme}">
+                         Style="{StaticResource LoginPasswordBoxTheme}"
+                         x:Name="pwdPasswort">
 
             </PasswordBox>
-
 
             <!--WIP Foreground not visible-->
             <Button Content="Login"

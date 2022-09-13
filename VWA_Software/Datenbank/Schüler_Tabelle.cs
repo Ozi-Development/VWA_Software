@@ -25,6 +25,7 @@ namespace VWA_Software.Datenbank
         public string Vorname { get; set; }
         public string Nachname { get; set; }
         public string Klasse { get; set; }
+        public string Passwort { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ausnahmen_Tabelle> Ausnahmen_Tabelle { get; set; }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="VWA_DatenbankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="VWA_DatenbankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Ausnahmen_Tabelle">
           <Key>
             <PropertyRef Name="Ausnahme_ID" />
@@ -22,9 +22,10 @@
             <PropertyRef Name="Schüler_ID" />
           </Key>
           <Property Name="Schüler_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Vorname" Type="varchar" MaxLength="255" />
-          <Property Name="Nachname" Type="varchar" MaxLength="255" />
-          <Property Name="Klasse" Type="varchar" MaxLength="2" />
+          <Property Name="Vorname" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Nachname" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Klasse" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Passwort" Type="varchar" MaxLength="6" Nullable="false" />
         </EntityType>
         <EntityType Name="Wahlpflichtfächer_Tabelle">
           <Key>
@@ -75,8 +76,7 @@
             <End Role="Wahlpflichtfächer_Tabelle" EntitySet="Wahlpflichtfächer_Tabelle" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="VWA_DatenbankModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -98,11 +98,12 @@
             <PropertyRef Name="Schüler_ID" />
           </Key>
           <Property Name="Schüler_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Vorname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Nachname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Klasse" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Vorname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nachname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Klasse" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Ausnahmen_Tabelle" Relationship="Self.FK_Ausnahmen_Schüler" FromRole="Schüler_Tabelle" ToRole="Ausnahmen_Tabelle" />
           <NavigationProperty Name="Wahlpflichtfächer_Tabelle" Relationship="Self.FK_Wahlpflichtfächer_Schüler" FromRole="Schüler_Tabelle" ToRole="Wahlpflichtfächer_Tabelle" />
+          <Property Name="Passwort" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Wahlpflichtfächer_Tabelle">
           <Key>
@@ -176,6 +177,7 @@
           <EntitySetMapping Name="Schüler_Tabelle">
             <EntityTypeMapping TypeName="VWA_DatenbankModel.Schüler_Tabelle">
               <MappingFragment StoreEntitySet="Schüler_Tabelle">
+                <ScalarProperty Name="Passwort" ColumnName="Passwort" />
                 <ScalarProperty Name="Schüler_ID" ColumnName="Schüler_ID" />
                 <ScalarProperty Name="Vorname" ColumnName="Vorname" />
                 <ScalarProperty Name="Nachname" ColumnName="Nachname" />
