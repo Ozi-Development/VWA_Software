@@ -34,29 +34,33 @@ namespace VWA_Software
         {
             string vorname = tbVorname.Text;
             string nachname = tbNachname.Text;
-            string passwort = pwdPasswort.Password;
-
-            SaveName save = new SaveName();
-            save.Vorname = vorname;
-            save.Nachname = nachname;
-            save.Passwort = passwort;
+            string passwort = pwbPasswordBox.Password;
 
 
             using (VWA_DatenbankEntities datenbankEntities = new VWA_DatenbankEntities())
             {
 
                 var query = from Schüler in datenbankEntities.Schüler_Tabelle
-                            where Schüler.Vorname == vorname && Schüler.Nachname == nachname /*&& Schüler.Passwort == passwort*/
-                            select Schüler;
+                            where Schüler.Vorname == vorname && 
+                                  Schüler.Nachname == nachname && 
+                                  Schüler.Passwort == passwort
+                            select Schüler.Schüler_ID;
 
                 if (query.Any())
                 {
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
                     this.Close();
+
+                    SaveName save = new SaveName();
+                    save.Vorname = vorname;
+                    save.Nachname = nachname;
+                    save.Passwort = passwort;
+
+                    save.ID = query.First();
                 }
 
-                else if (String.IsNullOrEmpty(vorname) || String.IsNullOrEmpty(nachname)/* || String.IsNullOrEmpty(passwort)*/)
+                else if (String.IsNullOrEmpty(vorname) || String.IsNullOrEmpty(nachname) || String.IsNullOrEmpty(passwort))
                 {
                     MessageBox.Show("Bitte gib einen gülltigen Namen oder ein gülltiges Passwort ein!");
                 }
