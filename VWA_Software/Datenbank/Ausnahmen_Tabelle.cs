@@ -21,6 +21,7 @@ namespace VWA_Software.Datenbank
         public bool Italienisch_Pflichtfach { get; set; }
         public bool Latein_Pflichtfach { get; set; }
         public bool Religion_Pflichtfach { get; set; }
+        public Nullable<bool> DG_Pflichtfach { get; set; }
     
         public virtual Schüler_Tabelle Schüler_Tabelle { get; set; }
     }

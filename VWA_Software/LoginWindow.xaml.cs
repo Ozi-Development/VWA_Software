@@ -25,10 +25,12 @@ namespace VWA_Software
         {
             InitializeComponent();
         }
+
         private void Drag(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
+
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
@@ -39,7 +41,6 @@ namespace VWA_Software
 
             using (VWA_DatenbankEntities datenbankEntities = new VWA_DatenbankEntities())
             {
-
                 var query = from Schüler in datenbankEntities.Schüler_Tabelle
                             where Schüler.Vorname == vorname && 
                                   Schüler.Nachname == nachname && 
@@ -48,21 +49,18 @@ namespace VWA_Software
 
                 if (query.Any())
                 {
+                    int id = query.First();
+
+                    (App.Current as App).ID = id;
+
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
                     this.Close();
-
-                    SaveName save = new SaveName();
-                    save.Vorname = vorname;
-                    save.Nachname = nachname;
-                    save.Passwort = passwort;
-
-                    save.ID = query.First();
                 }
 
                 else if (String.IsNullOrEmpty(vorname) || String.IsNullOrEmpty(nachname) || String.IsNullOrEmpty(passwort))
                 {
-                    MessageBox.Show("Bitte gib einen gülltigen Namen oder ein gülltiges Passwort ein!");
+                    MessageBox.Show("Bitte gib einen gültigen Namen oder ein gültiges Passwort ein!");
                 }
 
                 else
@@ -72,9 +70,19 @@ namespace VWA_Software
             }
         }
 
+
         private void Close(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+
+        private void Grid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                btnLogin_Click(sender, e);
+            }
         }
     }
 }

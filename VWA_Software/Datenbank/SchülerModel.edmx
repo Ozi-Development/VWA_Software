@@ -16,6 +16,7 @@
           <Property Name="Italienisch_Pflichtfach" Type="bit" Nullable="false" />
           <Property Name="Latein_Pflichtfach" Type="bit" Nullable="false" />
           <Property Name="Religion_Pflichtfach" Type="bit" Nullable="false" />
+          <Property Name="DG_Pflichtfach" Type="bit" />
         </EntityType>
         <EntityType Name="Schüler_Tabelle">
           <Key>
@@ -92,6 +93,7 @@
           <Property Name="Latein_Pflichtfach" Type="Boolean" Nullable="false" />
           <Property Name="Religion_Pflichtfach" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Schüler_Tabelle" Relationship="Self.FK_Ausnahmen_Schüler" FromRole="Ausnahmen_Tabelle" ToRole="Schüler_Tabelle" />
+          <Property Name="DG_Pflichtfach" Type="Boolean" />
         </EntityType>
         <EntityType Name="Schüler_Tabelle">
           <Key>
@@ -164,6 +166,7 @@
           <EntitySetMapping Name="Ausnahmen_Tabelle">
             <EntityTypeMapping TypeName="VWA_DatenbankModel.Ausnahmen_Tabelle">
               <MappingFragment StoreEntitySet="Ausnahmen_Tabelle">
+                <ScalarProperty Name="DG_Pflichtfach" ColumnName="DG_Pflichtfach" />
                 <ScalarProperty Name="Ausnahme_ID" ColumnName="Ausnahme_ID" />
                 <ScalarProperty Name="Schüler" ColumnName="Schüler" />
                 <ScalarProperty Name="BE_Pflichtfach" ColumnName="BE_Pflichtfach" />
