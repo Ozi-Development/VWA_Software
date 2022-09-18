@@ -73,7 +73,7 @@ namespace VWA_Software
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Du bist nicht mit dem Server verbunden!\nBitte melde diesen Fehler dem Administrator!\nFehler Code: " + ex.Message, "Server Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Du bist nicht mit dem Server verbunden!\nBitte melde diesen Fehler dem Administrator!\nFehler Code: " + ex.Message, "Server Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
