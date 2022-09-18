@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using VWA_Software.Core;
+using VWA_Software.Datenbank;
 
 namespace VWA_Software.MVVM.View
 {
@@ -26,16 +29,126 @@ namespace VWA_Software.MVVM.View
         public SelectionView()
         {
             InitializeComponent();
+            Ausnahmen();
         }
 
 
 
         // Methods
         #region Methods
+
+        // Ausnahmen
+        private void Ausnahmen()
+        {
+            using (VWA_DatenbankEntities context = new VWA_DatenbankEntities())
+            {
+                int id = (App.Current as App).ID;
+
+                // Französisch
+                var französisch = from Ausnahme in context.Ausnahmen_Tabelle
+                                  where Ausnahme.Schüler == id &&
+                                        Ausnahme.Französisch_Pflichtfach == true
+                                  select Ausnahme;
+
+                if (französisch.Any())
+                {
+                    chkFranzösisch_A.IsEnabled = false;
+                }
+                else
+                {
+                    chkFranzösisch_6.IsEnabled = false;
+                    chkFranzösisch_7.IsEnabled = false;
+                    chkFranzösisch_8.IsEnabled = false;
+                }
+
+
+                // Italienisch
+                var italienisch = from Ausnahme in context.Ausnahmen_Tabelle
+                                  where Ausnahme.Schüler == id &&
+                                        Ausnahme.Italienisch_Pflichtfach == true
+                                  select Ausnahme;
+
+                if (italienisch.Any())
+                {
+                    chkItalienisch_A.IsEnabled = false;
+                }
+                else
+                {
+                    chkItalienisch_6.IsEnabled = false;
+                    chkItalienisch_7.IsEnabled = false;
+                    chkItalienisch_8.IsEnabled = false;
+                }
+
+
+                // Latein
+                var latein = from Ausnahme in context.Ausnahmen_Tabelle
+                             where Ausnahme.Schüler == id &&
+                                   Ausnahme.Latein_Pflichtfach == false
+                             select Ausnahme;
+
+                if (latein.Any())
+                {
+                    chkLatein_6.IsEnabled = false;
+                    chkLatein_7.IsEnabled = false;
+                    chkLatein_8.IsEnabled = false;
+                }
+
+
+                // Bildnerische Erziehung + Musik
+                var be = from Ausnahme in context.Ausnahmen_Tabelle
+                         where Ausnahme.Schüler == id &&
+                               Ausnahme.BE_Pflichtfach == true
+                         select Ausnahme.Schüler;
+
+                if (be.Any())
+                {
+                    chkBE.IsEnabled = false;
+                    chkMusik_6.IsEnabled = false;
+                    chkMusik_7.IsEnabled = false;
+                    chkMusik_8.IsEnabled = false;
+                }
+                else
+                {
+                    chkBildnerischeErziehung_6.IsEnabled = false;
+                    chkBildnerischeErziehung_7.IsEnabled = false;
+                    chkBildnerischeErziehung_8.IsEnabled = false;
+                    chkMusik.IsEnabled = false;
+                }
+
+
+                // Religion
+                var religion = from Ausnahme in context.Ausnahmen_Tabelle
+                               where Ausnahme.Schüler == id &&
+                                     Ausnahme.Religion_Pflichtfach == false
+                               select Ausnahme.Schüler;
+
+                if (religion.Any())
+                {
+                    chkReligion_6.IsEnabled = false;
+                    chkReligion_7.IsEnabled = false;
+                    chkReligion_8.IsEnabled = false;
+                }
+
+
+                // DG
+                var dg = from Ausnahme in context.Ausnahmen_Tabelle
+                         where Ausnahme.Schüler == id &&
+                               Ausnahme.DG_Pflichtfach == true
+                         select Ausnahme.Schüler;
+
+                if (dg.Any())
+                {
+                    chkDG.IsEnabled = false;
+                }
+            }
+        }
+
+
+
         // Uncheck if Yes is checked for too many hours
         private void UncheckIfTooManyHours(bool tooManyHours, object thisSender)
         {
-            if(tooManyHours == true)
+            if (tooManyHours == true)
             {
                 CheckBox box = thisSender as CheckBox;
                 box.IsChecked = false;
@@ -51,6 +164,8 @@ namespace VWA_Software.MVVM.View
                 box2.IsChecked = false;
             }
         }
+
+
 
         // Enable/Disable 7.Klasse
         private void Enable_7_Klasse(object thisSender)
@@ -151,39 +266,39 @@ namespace VWA_Software.MVVM.View
         // DG
         private void chkDG_Checked(object sender, RoutedEventArgs e)
         {
-            warnung.Stundenzahl += 6;
+            warnung.Stundenzahl += 4;
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
         }
         private void chkDG_Unchecked(object sender, RoutedEventArgs e)
         {
-            warnung.Stundenzahl -= 6;
+            warnung.Stundenzahl -= 4;
         }
 
 
         // Musik
         private void chkMusik_Checked(object sender, RoutedEventArgs e)
         {
-            warnung.Stundenzahl += 6;
+            warnung.Stundenzahl += 4;
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
         }
         private void chkMusik_Unchecked(object sender, RoutedEventArgs e)
         {
-            warnung.Stundenzahl -= 6;
+            warnung.Stundenzahl -= 4;
         }
 
 
         // BE
         private void chkBE_Checked(object sender, RoutedEventArgs e)
         {
-            warnung.Stundenzahl += 6;
+            warnung.Stundenzahl += 4;
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
         }
         private void chkBE_Unchecked(object sender, RoutedEventArgs e)
         {
-            warnung.Stundenzahl -= 6;
+            warnung.Stundenzahl -= 4;
         }
 
 
@@ -268,7 +383,7 @@ namespace VWA_Software.MVVM.View
 
         // 7. Klasse
         private void chkDeutsch_7_Checked(object sender, RoutedEventArgs e)
-        {            
+        {
             warnung.Stundenzahl += 2;
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);

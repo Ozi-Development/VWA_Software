@@ -86,7 +86,6 @@
     <Compile Include="Core\DisableSubjects.cs" />
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
-    <Compile Include="Core\SaveName.cs" />
     <Compile Include="Core\StundenzahlWarnung.cs" />
     <Compile Include="Datenbank\Ausnahmen_Tabelle.cs">
       <DependentUpon>SchülerModel.tt</DependentUpon>
