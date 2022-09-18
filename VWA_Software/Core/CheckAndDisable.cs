@@ -24,7 +24,6 @@ namespace VWA_Software.Core
         }
 
 
-
         private void DisableCkeckbox()
         {
             switch (_stundenzahl)
