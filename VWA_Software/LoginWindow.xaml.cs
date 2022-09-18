@@ -38,35 +38,42 @@ namespace VWA_Software
             string nachname = tbNachname.Text;
             string passwort = pwbPasswordBox.Password;
 
-
-            using (VWA_DatenbankEntities datenbankEntities = new VWA_DatenbankEntities())
+            try
             {
-                var query = from Schüler in datenbankEntities.Schüler_Tabelle
-                            where Schüler.Vorname == vorname && 
-                                  Schüler.Nachname == nachname && 
-                                  Schüler.Passwort == passwort
-                            select Schüler.Schüler_ID;
-
-                if (query.Any())
+                using (VWA_DatenbankEntities datenbankEntities = new VWA_DatenbankEntities())
                 {
-                    int id = query.First();
+                    var query = from Schüler in datenbankEntities.Schüler_Tabelle
+                                where Schüler.Vorname == vorname && 
+                                      Schüler.Nachname == nachname && 
+                                      Schüler.Passwort == passwort
+                                select Schüler.Schüler_ID;
 
-                    (App.Current as App).ID = id;
+                    if (query.Any())
+                    {
+                        int id = query.First();
 
-                    MainWindow mainWindow = new MainWindow();
-                    mainWindow.Show();
-                    this.Close();
+                        (App.Current as App).ID = id;
+
+                        MainWindow mainWindow = new MainWindow();
+                        mainWindow.Show();
+                        this.Close();
+                    }
+
+                    else if (String.IsNullOrEmpty(vorname) || String.IsNullOrEmpty(nachname) || String.IsNullOrEmpty(passwort))
+                    {
+                        MessageBox.Show("Bitte gib einen gültigen Namen oder ein gültiges Passwort ein!");
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Falsches Passwort oder falscher Name!");
+                    }
+
                 }
-
-                else if (String.IsNullOrEmpty(vorname) || String.IsNullOrEmpty(nachname) || String.IsNullOrEmpty(passwort))
-                {
-                    MessageBox.Show("Bitte gib einen gültigen Namen oder ein gültiges Passwort ein!");
-                }
-
-                else
-                {
-                    MessageBox.Show("Falsches Passwort oder falscher Name!");
-                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Du bist nicht mit dem Server verbunden!\nBitte melde diesen Fehler dem Administrator!\nFehler Code: " + ex.Message, "Server Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
