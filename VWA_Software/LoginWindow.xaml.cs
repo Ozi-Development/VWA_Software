@@ -68,7 +68,6 @@ namespace VWA_Software
                     {
                         MessageBox.Show("Falsches Passwort oder falscher Name!");
                     }
-
                 }
             }
             catch(Exception ex)
