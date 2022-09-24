@@ -68,7 +68,18 @@
                     Style="{StaticResource EinreichenButtonTheme}"
                     Click="btnEinreichen_Click" Grid.ColumnSpan="2"/>
 
-
+            
+            <!--Temp-->
+            <Button Content="Alle WPF zurücksetzen"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Margin="50,0,600,0"
+                    VerticalAlignment="Center"
+                    x:Name="btnReset"
+                    Click="btnReset_Click"
+                    Style="{StaticResource EinreichenButtonTheme}"/>
+            <!--Temp-->
 
             <Grid VerticalAlignment="Center"
                         Grid.Row="1" Grid.ColumnSpan="2">
@@ -94,9 +105,6 @@
                         Background="#72777a"
                         Margin="236,831,364,-840"/>
             </Grid>
-
-
         </Grid>
-
     </Border>
 </Window>

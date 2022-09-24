@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -50,12 +51,12 @@ namespace VWA_Software
                 using (VWA_DatenbankEntities context = new VWA_DatenbankEntities())
                 {
 
-                    var query = context.Wahlpflichtfächer_Tabelle.Where(x => x.Wahlpflichtfach_ID == id);
+                    var query = context.Wahlpflichtfächer_Tabelle.Where(x => x.Schüler == id);
 
                     foreach (var addWpf in query)
                     {
                         addWpf.Wahlpflichtfach_1 = null;
-                        addWpf.Wahlpflichtfach_1 = null;
+                        addWpf.Wahlpflichtfach_2 = null;
                         addWpf.Wahlpflichtfach_3 = null;
                         addWpf.Wahlpflichtfach_4 = null;
                         addWpf.Wahlpflichtfach_5 = null;
@@ -120,5 +121,26 @@ namespace VWA_Software
             Close();
         }
 
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            using (VWA_DatenbankEntities context = new VWA_DatenbankEntities())
+            {
+                int id = (App.Current as App).ID;
+
+                var query = context.Wahlpflichtfächer_Tabelle.Where(x => x.Schüler == id);
+
+                foreach (var remove in query)
+                {
+                    remove.Wahlpflichtfach_1 = null;
+                    remove.Wahlpflichtfach_2 = null;
+                    remove.Wahlpflichtfach_3 = null;
+                    remove.Wahlpflichtfach_4 = null;
+                    remove.Wahlpflichtfach_5 = null;
+                }
+                context.SaveChanges();
+            }
+            
+            MessageBox.Show("Alle WPf erfolgreich resetet");
+        }
     }
 }
