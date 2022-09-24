@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Threading.Tasks;
 using System.Windows;
+using VWA_Software.Core;
 
 namespace VWA_Software
 {
@@ -14,12 +15,13 @@ namespace VWA_Software
     /// </summary>
     public partial class App : Application
     {
-        public List<string> WpfListe { get; set; }
+        public List<Wahlpflichtfächer> WpfList;
         public int ID { get; set; }
+        public int Stundenzahl { get; set; }
 
         public App()
         {
-            WpfListe = new List<string>();
+            WpfList = new List<Wahlpflichtfächer>();
         }
     }
 }

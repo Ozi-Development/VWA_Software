@@ -22,7 +22,11 @@ namespace VWA_Software.Core
         public int Stundenzahl
         {
             get { return _stundenzahl; }
-            set { _stundenzahl = value; }
+            set 
+            { 
+                _stundenzahl = value;
+                (App.Current as App).Stundenzahl = _stundenzahl;
+            }
         }
 
         public void CheckStundenzahl()
@@ -30,7 +34,8 @@ namespace VWA_Software.Core
             if (_stundenzahl > 8)
             {
                 // Anpassung am Text ??
-                if (MessageBox.Show("Du hast zu viele Wahlpflichtfächer ausgewählt!\nDu hast aktuell " + _stundenzahl + " Stunden ausgewählt\nBist du sicher, dass du fortfahren möchtest?", "Warnung", MessageBoxButton.YesNo, MessageBoxImage.Hand) == MessageBoxResult.No)
+                if (MessageBox.Show("Du hast zu viele Wahlpflichtfächer ausgewählt!\nDu hast aktuell " + Convert.ToString(_stundenzahl - 8) + " Stunden zu viel ausgewählt\nBist du sicher, dass du fortfahren möchtest?",
+                                    "Warnung", MessageBoxButton.YesNo, MessageBoxImage.Hand) == MessageBoxResult.No)              // Text bearbeiten
                 {
                     _stundenzahlBool = true;
                 }
