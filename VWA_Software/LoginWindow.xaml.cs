@@ -13,24 +13,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using VWA_Software.Datenbank;
 using VWA_Software.Core;
+using System.Runtime.Remoting.Contexts;
+using System.Windows.Media.Media3D;
 
 namespace VWA_Software
 {
     /// <summary>
     /// Interaktionslogik für Login.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class LoginWindow : Window // changed class name
     {
-        public Login()
+        public LoginWindow()
         {
             InitializeComponent();
         }
-
-        private void Drag(object sender, MouseButtonEventArgs e)
-        {
-            DragMove();
-        }
-
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
@@ -40,11 +36,11 @@ namespace VWA_Software
 
             try
             {
-                using (VWA_DatenbankEntities datenbankEntities = new VWA_DatenbankEntities())
+                using (VWA_DatenbankEntities context = new VWA_DatenbankEntities())
                 {
-                    var query = from Schüler in datenbankEntities.Schüler_Tabelle
-                                where Schüler.Vorname == vorname && 
-                                      Schüler.Nachname == nachname && 
+                    var query = from Schüler in context.Schüler_Tabelle
+                                where Schüler.Vorname == vorname &&
+                                      Schüler.Nachname == nachname &&
                                       Schüler.Passwort == passwort
                                 select Schüler.Schüler_ID;
 
@@ -52,6 +48,21 @@ namespace VWA_Software
                     {
                         int id = query.First();
 
+                        var checkIfNull = from Wpf in context.Wahlpflichtfächer_Tabelle
+                                          where Wpf.Schüler == id
+                                          select Wpf.Wahlpflichtfach_1;
+
+                        if (checkIfNull.First() != null)
+                        {
+                            //Text bearbeiten
+                            if (MessageBox.Show("Du hast bereits ein WPF gewählt, bist du sicher, dass du fortfahren möchtest? Die bereits gewählten WPFs werden überschrieben!", 
+                                                "Warnung", MessageBoxButton.YesNo, MessageBoxImage.Asterisk) == MessageBoxResult.No) // Text
+                            {
+                                this.Close();
+                            }
+                        }
+
+                    
                         (App.Current as App).ID = id;
 
                         MainWindow mainWindow = new MainWindow();
@@ -61,20 +72,21 @@ namespace VWA_Software
 
                     else if (String.IsNullOrEmpty(vorname) || String.IsNullOrEmpty(nachname) || String.IsNullOrEmpty(passwort))
                     {
-                        MessageBox.Show("Bitte gib einen gültigen Namen oder ein gültiges Passwort ein!");
+                        MessageBox.Show("Bitte gib einen gültigen Namen oder ein gültiges Passwort ein!"); // Text
                     }
 
                     else
                     {
-                        MessageBox.Show("Falsches Passwort oder falscher Name!");
+                        MessageBox.Show("Falsches Passwort oder falscher Name!"); // Text
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Du bist nicht mit dem Server verbunden!\nBitte melde diesen Fehler dem Administrator!\nFehler Code: " + ex.Message, "Server Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
 
 
         private void Close(object sender, RoutedEventArgs e)
@@ -82,13 +94,17 @@ namespace VWA_Software
             Close();
         }
 
-
         private void Grid_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.Key == Key.Enter)
+            if (e.Key == Key.Enter)
             {
                 btnLogin_Click(sender, e);
             }
+        }
+
+        private void Drag(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }

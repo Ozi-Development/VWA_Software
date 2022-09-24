@@ -87,6 +87,7 @@
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="Core\StundenzahlWarnung.cs" />
+    <Compile Include="Core\WPFEnum.cs" />
     <Compile Include="Datenbank\Ausnahmen_Tabelle.cs">
       <DependentUpon>SchülerModel.tt</DependentUpon>
     </Compile>
