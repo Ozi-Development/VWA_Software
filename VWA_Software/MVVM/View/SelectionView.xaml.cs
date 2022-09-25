@@ -171,7 +171,7 @@ namespace VWA_Software.MVVM.View
 
 
 
-        // Enable/Disable 7.Klasse
+        // Enable 7.Klasse
         private void Enable_7_Klasse(object thisSender)
         {
             CheckBox checkBox6 = thisSender as CheckBox;
@@ -181,6 +181,18 @@ namespace VWA_Software.MVVM.View
 
             CheckBox box = FindName(name7) as CheckBox;
             box.IsChecked = true;
+        }
+
+        // Disable 7.Klasse
+        private void Disable_7_Klasse(object thisSender)
+        {
+            CheckBox checkBox6 = thisSender as CheckBox;
+
+            string name6 = checkBox6.Name;
+            string name7 = name6.Replace('7', '6');
+
+            CheckBox box = FindName(name7) as CheckBox;
+            box.IsChecked = false;
         }
         #endregion Methods
 
@@ -389,6 +401,7 @@ namespace VWA_Software.MVVM.View
         private void chkReligion_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
+            Disable_7_Klasse(sender);
             (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Religion);
         }
 
@@ -441,6 +454,7 @@ namespace VWA_Software.MVVM.View
         private void chkDeutsch_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
+            Disable_7_Klasse(sender);
             (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Deutsch);
         }
 
@@ -493,6 +507,7 @@ namespace VWA_Software.MVVM.View
         private void chkEnglisch_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
+            Disable_7_Klasse(sender);
             (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Englisch);
         }
 
@@ -545,6 +560,7 @@ namespace VWA_Software.MVVM.View
         private void chkFranzösisch_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
+            Disable_7_Klasse(sender);
             (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Französisch);
         }
 
@@ -597,6 +613,7 @@ namespace VWA_Software.MVVM.View
         private void chkItalienisch_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
+            Disable_7_Klasse(sender);
             (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Italienisch);
         }
 
@@ -652,6 +669,7 @@ namespace VWA_Software.MVVM.View
         private void chkLatein_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
+            Disable_7_Klasse(sender);
             (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Latein);
         }
 
@@ -704,6 +722,7 @@ namespace VWA_Software.MVVM.View
         private void chkGeschichte_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
+            Disable_7_Klasse(sender);
             (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Geschichte);
         }
 
@@ -756,6 +775,7 @@ namespace VWA_Software.MVVM.View
         private void chkGeographie_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
+            Disable_7_Klasse(sender);
             (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Geographie);
         }
 
@@ -808,6 +828,7 @@ namespace VWA_Software.MVVM.View
         private void chkMathematik_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
+            Disable_7_Klasse(sender);
             (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Mathematik);
         }
 
@@ -860,6 +881,7 @@ namespace VWA_Software.MVVM.View
         private void chkBiologie_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
+            Disable_7_Klasse(sender);
             (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Biogogie);
         }
 
@@ -952,6 +974,7 @@ namespace VWA_Software.MVVM.View
         private void chkPhysik_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
+            Disable_7_Klasse(sender);
             (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Physik);
         }
 
@@ -1041,6 +1064,7 @@ namespace VWA_Software.MVVM.View
         private void chkMusik_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
+            Disable_7_Klasse(sender);
             (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Musik);
         }
 
@@ -1093,6 +1117,7 @@ namespace VWA_Software.MVVM.View
         private void chkBildnerischeErziehung_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
+            Disable_7_Klasse(sender);
             (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_BE);
         }
 
