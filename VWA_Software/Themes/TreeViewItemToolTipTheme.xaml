@@ -5,7 +5,6 @@
         Erstellt Tooltips und erbt von TreeViewItemTheme!
     -->
 
-
     <!--
         Gruppe A
     -->
@@ -32,7 +31,7 @@
         <Setter Property="ToolTip" Value="Mit dem Wahlpflichtfach Fit for Science and Technology soll eine naturwissenschaftliche und technische&#x0a;Spezialisierungsmöglichkeit für SchülerInnen bis hin zur Matura zur Verfügung gestellt werden.&#x0a;Dabei steht eine vielseitige und realitätsnahe Erarbeitung praxisbezogener Fragestellungen mit&#x0a;abwechslungsreichen Themen im Zentrum. Durch die Einbeziehung der Unterrichtsfächer Biologie, Chemie&#x0a;und Physik ist eine naturwissenschaftliche sowie technische Vielfalt gegeben. Die ausgearbeiteten&#x0a;Fragestellungen werden zum Abschluss eines jeden Semesters von den SchülerInnen in englischer Sprache&#x0a;öffentlich präsentiert.&#x0a;Die Zusammenarbeit mit einschlägigen Unternehmen soll gewährleisten, dass Experten mit Know-How bei&#x0a;den zu bearbeitenden Fragestellungen zur Seite stehen und kritische Rückmeldungen geben. Für die&#x0a;kooperierenden Unternehmen soll es darum gehen, ihren Betrieb präsentieren zu können, sowie aber auch&#x0a;Schulentwicklungen zu unterstützen die dazu führen, gut ausgebildete ArbeitnehmerInnen für die Zukunft&#x0a;gewinnen zu können."/>
     </Style>
 
-    <!---->
+    <!--Sportkunde-->
     <Style x:Key="SPOKTheme"
            TargetType="{x:Type TreeViewItem}"
            BasedOn="{StaticResource TreeViewItemTheme}">
@@ -53,14 +52,14 @@
         <Setter Property="ToolTip" Value="In diesem Gegenstand werden die auch im Lehrplan des Pflichtgegenstandes Musikerziehung obligaten&#x0a;Bereiche Musikpraxis, Musikkunde und Musikrezeption projektartiger behandelt. Dabei stehen besonders&#x0a;das praktische Tun und die selbständige Arbeit im Vordergrund.&#x0a;Schwerpunkte sind:&#x0a;Aspekte der Musikanalyse&#x0a;Komposition, Arrangement und praktisches Musizieren und Singen&#x0a;Einsatz des Computers (v.a. Noteflight und audacity)&#x0a;Harmonielehre: Stufen- und Funktionstheorie, Harmonisieren von Melodien&#x0a;Filmmusik&#x0a;Musiktheater&#x0a;Musik als Berufsfeld, Musikkritik&#x0a;Rhythmen und Percussioninstrumente&#x0a;Reden über Musik&#x0a;Exkursionen / Konzert-(Opern-)besuche!"/>
     </Style>
 
-    <!---->
+    <!--Bildnerische Erziehung-->
     <Style x:Key="BETheme"
            TargetType="{x:Type TreeViewItem}"
            BasedOn="{StaticResource TreeViewItemTheme}">
         <Setter Property="ToolTip" Value="Kennenlernen europäischer Stilepochen, Auseinandersetzung in theoretischer und praktischer Weise mit&#x0a;den Bildgattungen bzw. Techniken, Bildanalysen/Interpretation von Kunstwerken."/>
     </Style>
 
-    <!---->
+    <!--Berufsorientierung-->
     <Style x:Key="BOTheme"
            TargetType="{x:Type TreeViewItem}"
            BasedOn="{StaticResource TreeViewItemTheme}">
@@ -72,11 +71,6 @@
 
     <!--   
         Gruppe B    
-    -->
-
-
-    <!--
-    ADD THEME
     -->
 
     <Style x:Key="B_ReligionTheme"
@@ -109,12 +103,10 @@
         <Setter Property="ToolTip" Value="Im Wahlpflichtfach Italienisch vertiefend werden vorwiegend Themenbereiche aus dem&#x0a;Themenkorb der Oberstufe gewählt und diese dann vertiefend bzw. erweiternd behandelt, wobei sowohl&#x0a;Texte, Filme, Bücher, als auch Videomaterial zum Einsatz kommen. Da die Themenwahl auch in Absprache&#x0a;mit den Schülerinnen und Schülern erfolgt, werden deren Interessen berücksichtigt und es können&#x0a;landeskundliche, geschichtliche und literarische Bereiche, aber auch aktuelle Ereignisse behandelt werden.&#x0a;Der Schwerpunkt liegt im gemeinsamen Erarbeiten der Themen, im Sprechen und im Diskutieren auf&#x0a;Niveau B1."/>
     </Style>
 
-
-    <!--WIP-->
     <Style x:Key="B_LateinTheme"
            TargetType="{x:Type TreeViewItem}"
            BasedOn="{StaticResource TreeViewItemTheme}">
-        <Setter Property="ToolTip" Value="WIP"/>
+        <Setter Property="ToolTip" Value="Im Wahlpflichtfach Latein können sowohl Teilaspekte der Pflichtmodule vertieft und/ oder erweitert als&#x0a;auch neue Themen behandelt werden, wie zum Beispiel &quot;Der Umgang mit fremden Kulturen&quot;, &quot;Kindsein in&#x0a;Rom&quot;, Römisch kochen&quot; u.a.m. Bei der Auswahl der Themen wird auf Schülerinteresse und&#x0a;Projektorientierung geachtet; es könnten also durchaus auch Filme wie &quot;Troja&quot; oder &quot;Der Gladiator&quot;&#x0a;behandelt und mit den Originaltexten verglichen werden."/>
     </Style>
 
     <Style x:Key="B_GeschichteTheme"
@@ -170,10 +162,4 @@
            BasedOn="{StaticResource TreeViewItemTheme}">
         <Setter Property="ToolTip" Value="Auf dem Pflichtfach BE aufbauend ist es ein Vertiefen von Wissen und Fertigkeiten.&#x0a;Auseinandersetzung mit einem Thema über einen längeren Zeitraum, Kennenlernen von&#x0a;Künstlerpersönlichkeiten und ihrem Werk, Reflexion vor dem Original (Ausstellungsbesuche), Kunst im&#x0a;öffentlichen Raum, Stellenwert von Kunst in der Gesellschaft."/>
     </Style>
-
-
-
-
-
-
 </ResourceDictionary>

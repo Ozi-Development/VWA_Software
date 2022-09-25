@@ -1,19 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using VWA_Software.Core;
 using VWA_Software.Datenbank;
 
@@ -41,19 +30,20 @@ namespace VWA_Software
             int listCount = list.Count;
 
 
-
             if (stundenzahl < 8)
             {
-                MessageBox.Show(String.Format("Zu wenige Stunden. Dir fehlen noch {0} Stunden!", Convert.ToString(8 - stundenzahl))); // Text bearbeiten
+                MessageBox.Show(string.Format("Du hast zu wenige Stunden gewählt!\nDir fehlen noch {0} Stunden!",
+                                Convert.ToString(8 - stundenzahl)), "Warnung", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {
                 using (VWA_DatenbankEntities context = new VWA_DatenbankEntities())
                 {
+                    Mouse.OverrideCursor = Cursors.Wait;
 
-                    var query = context.Wahlpflichtfächer_Tabelle.Where(x => x.Schüler == id);
+                    var idQuery = context.Wahlpflichtfächer_Tabelle.Where(x => x.Schüler == id);
 
-                    foreach (var addWpf in query)
+                    foreach (var addWpf in idQuery)
                     {
                         addWpf.Wahlpflichtfach_1 = null;
                         addWpf.Wahlpflichtfach_2 = null;
@@ -94,13 +84,15 @@ namespace VWA_Software
                                 break;
 
                             default:
-                                MessageBox.Show("Zu viele WPF, die Datenbank unterstützt maximal 5 verschiedene WPFs!",
-                                                "Warnung", MessageBoxButton.OK, MessageBoxImage.Hand); // Text bearbeiten
+                                MessageBox.Show("Du hast zu viele Wahlpflichtfächer gewählt!\nDie Datenbank unterstützt maximal 5 verschiedene!",
+                                                "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                                Mouse.OverrideCursor = Cursors.Arrow;
                                 return;
                         }
                     }
                     context.SaveChanges();
                     MessageBox.Show("WPf erfolgreich eingereicht!");
+                    Mouse.OverrideCursor = Cursors.Arrow;
                 }
             }
         }
@@ -119,28 +111,6 @@ namespace VWA_Software
         private void Close(object sender, RoutedEventArgs e)
         {
             Close();
-        }
-
-        private void btnReset_Click(object sender, RoutedEventArgs e)
-        {
-            using (VWA_DatenbankEntities context = new VWA_DatenbankEntities())
-            {
-                int id = (App.Current as App).ID;
-
-                var query = context.Wahlpflichtfächer_Tabelle.Where(x => x.Schüler == id);
-
-                foreach (var remove in query)
-                {
-                    remove.Wahlpflichtfach_1 = null;
-                    remove.Wahlpflichtfach_2 = null;
-                    remove.Wahlpflichtfach_3 = null;
-                    remove.Wahlpflichtfach_4 = null;
-                    remove.Wahlpflichtfach_5 = null;
-                }
-                context.SaveChanges();
-            }
-            
-            MessageBox.Show("Alle WPf erfolgreich resetet");
         }
     }
 }

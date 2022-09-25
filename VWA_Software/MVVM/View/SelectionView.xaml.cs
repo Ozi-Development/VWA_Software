@@ -1,19 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using VWA_Software.Core;
 using VWA_Software.Datenbank;
 
@@ -31,7 +18,6 @@ namespace VWA_Software.MVVM.View
             InitializeComponent();
             Ausnahmen();
         }
-
 
 
         // Methods
@@ -130,13 +116,13 @@ namespace VWA_Software.MVVM.View
                 }
 
 
-                // DG (rename to Gymnasium?)
-                var dg = from Ausnahme in context.Ausnahmen_Tabelle
-                         where Ausnahme.Schüler == id &&
-                               Ausnahme.DG_Pflichtfach == true
-                         select Ausnahme.Schüler;
+                // Gymnasium
+                var gymnasium = from Ausnahme in context.Ausnahmen_Tabelle
+                                where Ausnahme.Schüler == id &&
+                                      Ausnahme.DG_Pflichtfach == false
+                                select Ausnahme.Schüler;
 
-                if (dg.Any())
+                if (gymnasium.Any())
                 {
                     chkDG.IsEnabled = false;
                 }
@@ -148,8 +134,7 @@ namespace VWA_Software.MVVM.View
         }
 
 
-
-        // Uncheck if Yes is checked for too many hours
+        // Uncheck if Yes is selected for too many hours
         private void UncheckIfTooManyHours(bool tooManyHours, object thisSender)
         {
             if (tooManyHours == true)
@@ -157,7 +142,6 @@ namespace VWA_Software.MVVM.View
                 CheckBox box = thisSender as CheckBox;
                 box.IsChecked = false;
                 warnung.StundenzahlBool = false;
-
 
                 CheckBox checkBox6 = thisSender as CheckBox;
 
@@ -168,7 +152,6 @@ namespace VWA_Software.MVVM.View
                 box2.IsChecked = false;
             }
         }
-
 
 
         // Enable 7.Klasse

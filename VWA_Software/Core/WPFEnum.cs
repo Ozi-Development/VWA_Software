@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/// <summary>
+/// Enums für die Datenbank
+/// </summary>
 
 namespace VWA_Software.Core
 {
-    /// <summary>
-    /// Enums für die Datenbank
-    /// </summary>
     public enum Wahlpflichtfächer
     {
         // Gruppe A

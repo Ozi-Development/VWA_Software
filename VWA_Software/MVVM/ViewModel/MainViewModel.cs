@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VWA_Software.Core;
+﻿using VWA_Software.Core;
 
 namespace VWA_Software.MVVM.ViewModel
 {

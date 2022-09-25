@@ -1,27 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using VWA_Software.Datenbank;
-using VWA_Software.Core;
-using System.Runtime.Remoting.Contexts;
-using System.Windows.Media.Media3D;
 
 namespace VWA_Software
 {
     /// <summary>
     /// Interaktionslogik für Login.xaml
     /// </summary>
-    public partial class LoginWindow : Window // changed class name
+    public partial class LoginWindow : Window
     {
         public LoginWindow()
         {
@@ -38,15 +26,18 @@ namespace VWA_Software
             {
                 using (VWA_DatenbankEntities context = new VWA_DatenbankEntities())
                 {
-                    var query = from Schüler in context.Schüler_Tabelle
-                                where Schüler.Vorname == vorname &&
-                                      Schüler.Nachname == nachname &&
-                                      Schüler.Passwort == passwort
-                                select Schüler.Schüler_ID;
+                    Mouse.OverrideCursor = Cursors.AppStarting;
 
-                    if (query.Any())
+                    var checkSchüler = from Schüler in context.Schüler_Tabelle
+                                       where Schüler.Vorname == vorname &&
+                                             Schüler.Nachname == nachname &&
+                                             Schüler.Passwort == passwort
+                                       select Schüler.Schüler_ID;
+
+                    if (checkSchüler.Any())
                     {
-                        int id = query.First();
+                        int id = checkSchüler.First();
+                        (App.Current as App).ID = id;
 
                         var checkIfNull = from Wpf in context.Wahlpflichtfächer_Tabelle
                                           where Wpf.Schüler == id
@@ -54,17 +45,14 @@ namespace VWA_Software
 
                         if (checkIfNull.First() != null)
                         {
-                            //Text bearbeiten
-                            if (MessageBox.Show("Du hast bereits ein WPF gewählt, bist du sicher, dass du fortfahren möchtest? Die bereits gewählten WPFs werden überschrieben!", 
-                                                "Warnung", MessageBoxButton.YesNo, MessageBoxImage.Asterisk) == MessageBoxResult.No) // Text
+                            if (MessageBox.Show("Du hast deine Wahlpflichtfächer bereits gewählt! Bist du sicher, dass du fortfahren möchtest? Die bereits gewählten Wahlpflichtfächer werden dann überschrieben!",
+                                                "Warnung", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
                             {
                                 this.Close();
                             }
                         }
 
-                    
-                        (App.Current as App).ID = id;
-
+                        Mouse.OverrideCursor = Cursors.Arrow;
                         MainWindow mainWindow = new MainWindow();
                         mainWindow.Show();
                         this.Close();
@@ -72,18 +60,21 @@ namespace VWA_Software
 
                     else if (String.IsNullOrEmpty(vorname) || String.IsNullOrEmpty(nachname) || String.IsNullOrEmpty(passwort))
                     {
-                        MessageBox.Show("Bitte gib einen gültigen Namen oder ein gültiges Passwort ein!"); // Text
+                        MessageBox.Show("Bitte gib einen gültigen Namen\noder ein gültiges Passwort ein!", "Warnung", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        Mouse.OverrideCursor = Cursors.Arrow;
                     }
 
                     else
                     {
-                        MessageBox.Show("Falsches Passwort oder falscher Name!"); // Text
+                        MessageBox.Show("Falsches Passwort oder falscher Name!", "Warnung", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        Mouse.OverrideCursor = Cursors.Arrow;
                     }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Du bist nicht mit dem Server verbunden!\nBitte melde diesen Fehler dem Administrator!\nFehler Code: " + ex.Message, "Server Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Mouse.OverrideCursor = Cursors.Arrow;
             }
         }
 

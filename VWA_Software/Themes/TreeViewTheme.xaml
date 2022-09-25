@@ -5,9 +5,7 @@
     <Style TargetType="{x:Type TreeViewItem}"
            x:Key="TreeViewItemTheme">
         <Setter Property="Foreground" Value="#72777a"/>
-
         <Setter Property="FontSize" Value="15"/>
-
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Cursor" Value="Hand"/>
@@ -15,14 +13,12 @@
         </Style.Triggers>
     </Style>
 
-
     <!--TreeView-->
     <Style TargetType="{x:Type TreeView}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="#72777a"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="Margin" Value="0,45,0,0"/>
-
         <Setter Property="BorderThickness" Value="0"/>
         <Style.Resources>
             <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
@@ -34,7 +30,6 @@
             <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}"
                       Color="#72777a"/>
         </Style.Resources>
-
     </Style>
 
     <!--TextBlock-->
