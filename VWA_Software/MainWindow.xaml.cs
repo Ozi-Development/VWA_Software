@@ -25,7 +25,7 @@ namespace VWA_Software
             int stundenzahl = (App.Current as App).Stundenzahl;
             int id = (App.Current as App).ID;
 
-            List<Wahlpflichtfächer> list = new List<Wahlpflichtfächer>();
+            List<Wahlpflichtfach> list = new List<Wahlpflichtfach>();
             list = (App.Current as App).WpfList;
             int listCount = list.Count;
 

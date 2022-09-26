@@ -191,13 +191,13 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.A_Spanisch);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.A_Spanisch);
 
         }
         private void chkSpanisch_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 6;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.A_Spanisch);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.A_Spanisch);
         }
 
 
@@ -208,12 +208,12 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.A_Italienisch);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.A_Italienisch);
         }
         private void chkItalienisch_A_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 6;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.A_Italienisch);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.A_Italienisch);
         }
 
 
@@ -224,12 +224,12 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.A_Französisch);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.A_Französisch);
         }
         private void chkFranzösisch_A_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 6;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.A_Französisch);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.A_Französisch);
         }
 
 
@@ -240,12 +240,12 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.A_Informatik);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.A_Informatik);
         }
         private void chkInformatik_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 6;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.A_Informatik);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.A_Informatik);
         }
 
 
@@ -256,12 +256,12 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.A_FIT);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.A_FIT);
         }
         private void chkFIT_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 6;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.A_FIT);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.A_FIT);
         }
 
 
@@ -272,12 +272,12 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.A_SPOK);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.A_SPOK);
         }
         private void chkSPOK_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 6;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.A_SPOK);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.A_SPOK);
         }
 
 
@@ -288,12 +288,12 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.A_DG);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.A_DG);
         }
         private void chkDG_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 4;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.A_DG);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.A_DG);
         }
 
 
@@ -304,12 +304,12 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.A_Musik);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.A_Musik);
         }
         private void chkMusik_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 4;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.A_Musik);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.A_Musik);
         }
 
 
@@ -320,12 +320,12 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.A_BE);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.A_BE);
         }
         private void chkBE_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 4;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.A_BE);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.A_BE);
         }
 
 
@@ -336,12 +336,12 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.A_Berufsorientierung);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.A_Berufsorientierung);
         }
         private void chkBerufsorientierung_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.A_Berufsorientierung);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.A_Berufsorientierung);
         }
 
         #endregion GruppeA
@@ -362,13 +362,13 @@ namespace VWA_Software.MVVM.View
             warnung.Stundenzahl += 2;
             Enable_7_Klasse(sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_6_Religion);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_6_Religion);
         }
 
         private void chkReligion_6_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_6_Religion);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_6_Religion);
         }
 
         // 7. Klasse
@@ -378,14 +378,14 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_7_Religion);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_7_Religion);
         }
 
         private void chkReligion_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
             Disable_7_Klasse(sender);
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Religion);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_7_Religion);
         }
 
         // 8. Klasse
@@ -395,13 +395,13 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_8_Religion);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_8_Religion);
         }
 
         private void chkReligion_8_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_8_Religion);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_8_Religion);
         }
         #endregion Religion
 
@@ -415,13 +415,13 @@ namespace VWA_Software.MVVM.View
             warnung.Stundenzahl += 2;
             Enable_7_Klasse(sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_6_Deutsch);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_6_Deutsch);
         }
 
         private void chkDeutsch_6_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_6_Deutsch);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_6_Deutsch);
         }
 
         // 7. Klasse
@@ -431,14 +431,14 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_7_Deutsch);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_7_Deutsch);
         }
 
         private void chkDeutsch_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
             Disable_7_Klasse(sender);
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Deutsch);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_7_Deutsch);
         }
 
         // 8. Klasse
@@ -448,13 +448,13 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_8_Deutsch);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_8_Deutsch);
         }
 
         private void chkDeutsch_8_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_8_Deutsch);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_8_Deutsch);
         }
         #endregion Deutsch
 
@@ -468,13 +468,13 @@ namespace VWA_Software.MVVM.View
             warnung.Stundenzahl += 2;
             Enable_7_Klasse(sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_6_Englisch);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_6_Englisch);
         }
 
         private void chkEnglisch_6_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_6_Englisch);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_6_Englisch);
         }
 
         // 7. Klasse
@@ -484,14 +484,14 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_7_Englisch);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_7_Englisch);
         }
 
         private void chkEnglisch_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
             Disable_7_Klasse(sender);
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Englisch);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_7_Englisch);
         }
 
         // 8.Klasse
@@ -501,13 +501,13 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_8_Englisch);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_8_Englisch);
         }
 
         private void chkEnglisch_8_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_8_Englisch);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_8_Englisch);
         }
         #endregion Englisch
 
@@ -521,13 +521,13 @@ namespace VWA_Software.MVVM.View
             warnung.Stundenzahl += 2;
             Enable_7_Klasse(sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_6_Französisch);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_6_Französisch);
         }
 
         private void chkFranzösisch_6_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_6_Französisch);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_6_Französisch);
         }
 
         // 7. Klasse
@@ -537,14 +537,14 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_7_Französisch);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_7_Französisch);
         }
 
         private void chkFranzösisch_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
             Disable_7_Klasse(sender);
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Französisch);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_7_Französisch);
         }
 
         // 8. Klasse
@@ -554,13 +554,13 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_8_Französisch);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_8_Französisch);
         }
 
         private void chkFranzösisch_8_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_8_Französisch);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_8_Französisch);
         }
         #endregion Französisch
 
@@ -574,13 +574,13 @@ namespace VWA_Software.MVVM.View
             warnung.Stundenzahl += 2;
             Enable_7_Klasse(sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_6_Italienisch);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_6_Italienisch);
         }
 
         private void chkItalienisch_6_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_6_Italienisch);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_6_Italienisch);
         }
 
         // 7. Klasse
@@ -590,14 +590,14 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_7_Italienisch);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_7_Italienisch);
         }
 
         private void chkItalienisch_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
             Disable_7_Klasse(sender);
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Italienisch);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_7_Italienisch);
         }
 
         // 8. Klasse
@@ -607,13 +607,13 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_8_Italienisch);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_8_Italienisch);
         }
 
         private void chkItalienisch_8_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_8_Italienisch);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_8_Italienisch);
         }
         #endregion Itanlienisch
 
@@ -630,13 +630,13 @@ namespace VWA_Software.MVVM.View
             warnung.Stundenzahl += 2;
             Enable_7_Klasse(sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_6_Latein);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_6_Latein);
         }
 
         private void chkLatein_6_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_6_Latein);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_6_Latein);
         }
 
         // 7. Klasse
@@ -646,14 +646,14 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_7_Latein);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_7_Latein);
         }
 
         private void chkLatein_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
             Disable_7_Klasse(sender);
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Latein);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_7_Latein);
         }
 
         // 8. Klasse
@@ -663,13 +663,13 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_8_Latein);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_8_Latein);
         }
 
         private void chkLatein_8_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_8_Latein);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_8_Latein);
         }
         #endregion Latein
 
@@ -683,13 +683,13 @@ namespace VWA_Software.MVVM.View
             warnung.Stundenzahl += 2;
             Enable_7_Klasse(sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_6_Geschichte);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_6_Geschichte);
         }
 
         private void chkGeschichte_6_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_6_Geschichte);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_6_Geschichte);
         }
 
         // 7. Klasse
@@ -699,14 +699,14 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_7_Geschichte);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_7_Geschichte);
         }
 
         private void chkGeschichte_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
             Disable_7_Klasse(sender);
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Geschichte);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_7_Geschichte);
         }
 
         // 8. Klasse
@@ -716,13 +716,13 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_8_Geschichte);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_8_Geschichte);
         }
 
         private void chkGeschichte_8_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_8_Geschichte);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_8_Geschichte);
         }
         #endregion Geschichte
 
@@ -736,13 +736,13 @@ namespace VWA_Software.MVVM.View
             warnung.Stundenzahl += 2;
             Enable_7_Klasse(sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_6_Geographie);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_6_Geographie);
         }
 
         private void chkGeographie_6_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_6_Geographie);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_6_Geographie);
         }
 
         // 7. Klasse
@@ -752,14 +752,14 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_7_Geographie);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_7_Geographie);
         }
 
         private void chkGeographie_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
             Disable_7_Klasse(sender);
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Geographie);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_7_Geographie);
         }
 
         // 8. Klasse
@@ -769,13 +769,13 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_8_Geographie);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_8_Geographie);
         }
 
         private void chkGeographie_8_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_8_Geographie);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_8_Geographie);
         }
         #endregion Geographie
 
@@ -789,13 +789,13 @@ namespace VWA_Software.MVVM.View
             warnung.Stundenzahl += 2;
             Enable_7_Klasse(sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_6_Mathematik);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_6_Mathematik);
         }
 
         private void chkMathematik_6_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_6_Mathematik);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_6_Mathematik);
         }
 
         // 7. Klasse
@@ -805,14 +805,14 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_7_Mathematik);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_7_Mathematik);
         }
 
         private void chkMathematik_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
             Disable_7_Klasse(sender);
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Mathematik);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_7_Mathematik);
         }
 
         // 8. Klasse
@@ -822,13 +822,13 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_8_Mathematik);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_8_Mathematik);
         }
 
         private void chkMathematik_8_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_8_Mathematik);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_8_Mathematik);
         }
         #endregion Mathematik
 
@@ -842,13 +842,13 @@ namespace VWA_Software.MVVM.View
             warnung.Stundenzahl += 2;
             Enable_7_Klasse(sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_6_Biogogie);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_6_Biogogie);
         }
 
         private void chkBiologie_6_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_6_Biogogie);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_6_Biogogie);
         }
 
         // 7. Klasse
@@ -858,14 +858,14 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_7_Biogogie);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_7_Biogogie);
         }
 
         private void chkBiologie_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
             Disable_7_Klasse(sender);
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Biogogie);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_7_Biogogie);
         }
 
         // 8. Klasse
@@ -875,13 +875,13 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_8_Biogogie);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_8_Biogogie);
         }
 
         private void chkBiologie_8_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_8_Biogogie);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_8_Biogogie);
         }
         #endregion Biologie
 
@@ -896,13 +896,13 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_7_Chemie);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_7_Chemie);
         }
 
         private void chkChemie_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Chemie);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_7_Chemie);
         }
 
         // 8. Klasse
@@ -912,13 +912,13 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_8_Chemie);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_8_Chemie);
         }
 
         private void chkChemie_8_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_8_Chemie);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_8_Chemie);
         }
         #endregion Chemie
 
@@ -935,13 +935,13 @@ namespace VWA_Software.MVVM.View
             warnung.Stundenzahl += 2;
             Enable_7_Klasse(sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_6_Physik);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_6_Physik);
         }
 
         private void chkPhysik_6_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_6_Physik);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_6_Physik);
         }
 
         // 7. Klasse
@@ -951,14 +951,14 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_7_Physik);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_7_Physik);
         }
 
         private void chkPhysik_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
             Disable_7_Klasse(sender);
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Physik);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_7_Physik);
         }
 
         // 8. Klasse
@@ -968,13 +968,13 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_8_Physik);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_8_Physik);
         }
 
         private void chkPhysik_8_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_8_Physik);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_8_Physik);
         }
         #endregion Physik
 
@@ -989,13 +989,13 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_7_PUP);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_7_PUP);
         }
 
         private void chkPhilosophiePsychologie_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_PUP);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_7_PUP);
         }
 
         // 8. Klasse
@@ -1005,13 +1005,13 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_8_PUP);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_8_PUP);
         }
 
         private void chkPhilosophiePsychologie_8_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_8_PUP);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_8_PUP);
         }
         #endregion Philosphie und Psychologie
 
@@ -1025,13 +1025,13 @@ namespace VWA_Software.MVVM.View
             warnung.Stundenzahl += 2;
             Enable_7_Klasse(sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_6_Musik);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_6_Musik);
         }
 
         private void chkMusik_6_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_6_Musik);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_6_Musik);
         }
 
         // 7. Klasse
@@ -1041,14 +1041,14 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_7_Musik);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_7_Musik);
         }
 
         private void chkMusik_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
             Disable_7_Klasse(sender);
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_Musik);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_7_Musik);
         }
 
         // 8. Klasse
@@ -1058,13 +1058,13 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_8_Musik);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_8_Musik);
         }
 
         private void chkMusik_8_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_8_Musik);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_8_Musik);
         }
         #endregion Musik
 
@@ -1078,13 +1078,13 @@ namespace VWA_Software.MVVM.View
             warnung.Stundenzahl += 2;
             Enable_7_Klasse(sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_6_BE);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_6_BE);
         }
 
         private void chkBildnerischeErziehung_6_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_6_BE);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_6_BE);
         }
 
         // 7. Klasse
@@ -1094,14 +1094,14 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_7_BE);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_7_BE);
         }
 
         private void chkBildnerischeErziehung_7_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
             Disable_7_Klasse(sender);
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_7_BE);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_7_BE);
         }
 
         // 8. Klasse
@@ -1111,13 +1111,13 @@ namespace VWA_Software.MVVM.View
             warnung.CheckStundenzahl();
             UncheckIfTooManyHours(warnung.StundenzahlBool, sender);
 
-            (App.Current as App).WpfList.Add(Wahlpflichtfächer.B_8_BE);
+            (App.Current as App).WpfList.Add(Wahlpflichtfach.B_8_BE);
         }
 
         private void chkBildnerischeErziehung_8_Unchecked(object sender, RoutedEventArgs e)
         {
             warnung.Stundenzahl -= 2;
-            (App.Current as App).WpfList.Remove(Wahlpflichtfächer.B_8_BE);
+            (App.Current as App).WpfList.Remove(Wahlpflichtfach.B_8_BE);
         }
         #endregion Bildnerische Erziehung
 

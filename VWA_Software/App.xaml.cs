@@ -9,13 +9,13 @@ namespace VWA_Software
     /// </summary>
     public partial class App : Application
     {
-        public List<Wahlpflichtfächer> WpfList;
+        public List<Wahlpflichtfach> WpfList;
         public int ID { get; set; }
         public int Stundenzahl { get; set; }
 
         public App()
         {
-            WpfList = new List<Wahlpflichtfächer>();
+            WpfList = new List<Wahlpflichtfach>();
         }
     }
 }

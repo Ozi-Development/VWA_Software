@@ -4,7 +4,7 @@
 
 namespace VWA_Software.Core
 {
-    public enum Wahlpflichtfächer
+    public enum Wahlpflichtfach
     {
         // Gruppe A
         A_Spanisch,
