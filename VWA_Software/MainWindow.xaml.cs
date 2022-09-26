@@ -91,7 +91,8 @@ namespace VWA_Software
                         }
                     }
                     context.SaveChanges();
-                    MessageBox.Show("WPf erfolgreich eingereicht!");
+                    MessageBox.Show("Deine Wahlpflichtfächer wurden erfolgreich eingereicht!",
+                                    "Erfolgreich eingereicht", MessageBoxButton.OK, MessageBoxImage.Information);
                     Mouse.OverrideCursor = Cursors.Arrow;
                 }
             }
