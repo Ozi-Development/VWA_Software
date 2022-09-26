@@ -31,7 +31,7 @@ namespace VWA_Software.MVVM.View
                 int id = (App.Current as App).ID;
 
                 // Französisch
-                var französisch = from Ausnahme in context.Ausnahmen_Tabelle
+                var französisch = from Ausnahme in context.Ausnahmen
                                   where Ausnahme.Schüler == id &&
                                         Ausnahme.Französisch_Pflichtfach == true
                                   select Ausnahme;
@@ -49,7 +49,7 @@ namespace VWA_Software.MVVM.View
 
 
                 // Italienisch
-                var italienisch = from Ausnahme in context.Ausnahmen_Tabelle
+                var italienisch = from Ausnahme in context.Ausnahmen
                                   where Ausnahme.Schüler == id &&
                                         Ausnahme.Italienisch_Pflichtfach == true
                                   select Ausnahme;
@@ -67,7 +67,7 @@ namespace VWA_Software.MVVM.View
 
 
                 // Latein
-                var latein = from Ausnahme in context.Ausnahmen_Tabelle
+                var latein = from Ausnahme in context.Ausnahmen
                              where Ausnahme.Schüler == id &&
                                    Ausnahme.Latein_Pflichtfach == false
                              select Ausnahme;
@@ -81,7 +81,7 @@ namespace VWA_Software.MVVM.View
 
 
                 // Bildnerische Erziehung + Musik (May be deleted)
-                var be = from Ausnahme in context.Ausnahmen_Tabelle
+                var be = from Ausnahme in context.Ausnahmen
                          where Ausnahme.Schüler == id &&
                                Ausnahme.BE_Pflichtfach == true
                          select Ausnahme.Schüler;
@@ -103,7 +103,7 @@ namespace VWA_Software.MVVM.View
 
 
                 // Religion
-                var religion = from Ausnahme in context.Ausnahmen_Tabelle
+                var religion = from Ausnahme in context.Ausnahmen
                                where Ausnahme.Schüler == id &&
                                      Ausnahme.Religion_Pflichtfach == false
                                select Ausnahme.Schüler;
@@ -117,9 +117,9 @@ namespace VWA_Software.MVVM.View
 
 
                 // Gymnasium
-                var gymnasium = from Ausnahme in context.Ausnahmen_Tabelle
+                var gymnasium = from Ausnahme in context.Ausnahmen
                                 where Ausnahme.Schüler == id &&
-                                      Ausnahme.DG_Pflichtfach == false
+                                      Ausnahme.Gymnasium == false
                                 select Ausnahme.Schüler;
 
                 if (gymnasium.Any())

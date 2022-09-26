@@ -5,11 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="bc6ca9c8591646dc8338d84d6f757bed" Name="Diagram1">
-        <EntityTypeShape EntityType="VWA_DatenbankModel.Ausnahmen_Tabelle" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="VWA_DatenbankModel.Schüler_Tabelle" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="VWA_DatenbankModel.Wahlpflichtfächer_Tabelle" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
-        <AssociationConnector Association="VWA_DatenbankModel.FK_Ausnahmen_Schüler" ManuallyRouted="false" />
-        <AssociationConnector Association="VWA_DatenbankModel.FK_Wahlpflichtfächer_Schüler" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="VWA_DatenbankModel.Ausnahmen" Width="1.5" PointX="3" PointY="4.375" />
+        <EntityTypeShape EntityType="VWA_DatenbankModel.Schüler" Width="1.5" PointX="0.75" PointY="3" />
+        <EntityTypeShape EntityType="VWA_DatenbankModel.Wahlpflichtfächer" Width="1.5" PointX="3" PointY="1.125" />
+        <AssociationConnector Association="VWA_DatenbankModel.FK_Ausnahmen_Schüler" />
+        <AssociationConnector Association="VWA_DatenbankModel.FK_Wahlpflichtfächer_Schüler" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

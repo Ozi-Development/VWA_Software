@@ -25,8 +25,8 @@ namespace VWA_Software.Datenbank
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Ausnahmen_Tabelle> Ausnahmen_Tabelle { get; set; }
-        public virtual DbSet<Schüler_Tabelle> Schüler_Tabelle { get; set; }
-        public virtual DbSet<Wahlpflichtfächer_Tabelle> Wahlpflichtfächer_Tabelle { get; set; }
+        public virtual DbSet<Ausnahmen> Ausnahmen { get; set; }
+        public virtual DbSet<Schüler> Schüler { get; set; }
+        public virtual DbSet<Wahlpflichtfächer> Wahlpflichtfächer { get; set; }
     }
 }

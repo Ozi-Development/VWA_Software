@@ -41,7 +41,7 @@ namespace VWA_Software
                 {
                     Mouse.OverrideCursor = Cursors.Wait;
 
-                    var idQuery = context.Wahlpflichtfächer_Tabelle.Where(x => x.Schüler == id);
+                    var idQuery = context.Wahlpflichtfächer.Where(x => x.Schüler == id);
 
                     foreach (var addWpf in idQuery)
                     {

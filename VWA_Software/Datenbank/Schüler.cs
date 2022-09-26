@@ -18,7 +18,7 @@ namespace VWA_Software.Datenbank
         public Schüler()
         {
             this.Ausnahmen = new HashSet<Ausnahmen>();
-            this.Wahlpflichtfächer = new HashSet<Wahlpflichtfach>();
+            this.Wahlpflichtfächer = new HashSet<Wahlpflichtfächer>();
         }
     
         public int PK_SchülerID { get; set; }
@@ -30,6 +30,6 @@ namespace VWA_Software.Datenbank
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ausnahmen> Ausnahmen { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Wahlpflichtfach> Wahlpflichtfächer { get; set; }
+        public virtual ICollection<Wahlpflichtfächer> Wahlpflichtfächer { get; set; }
     }
 }

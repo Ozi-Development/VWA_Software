@@ -28,18 +28,18 @@ namespace VWA_Software
                 {
                     Mouse.OverrideCursor = Cursors.AppStarting;
 
-                    var checkSchüler = from Schüler in context.Schüler_Tabelle
+                    var checkSchüler = from Schüler in context.Schüler
                                        where Schüler.Vorname == vorname &&
                                              Schüler.Nachname == nachname &&
                                              Schüler.Passwort == passwort
-                                       select Schüler.Schüler_ID;
+                                       select Schüler.PK_SchülerID;
 
                     if (checkSchüler.Any())
                     {
                         int id = checkSchüler.First();
                         (App.Current as App).ID = id;
 
-                        var checkIfNull = from Wpf in context.Wahlpflichtfächer_Tabelle
+                        var checkIfNull = from Wpf in context.Wahlpflichtfächer
                                           where Wpf.Schüler == id
                                           select Wpf.Wahlpflichtfach_1;
 

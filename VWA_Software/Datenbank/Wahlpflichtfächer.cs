@@ -12,7 +12,7 @@ namespace VWA_Software.Datenbank
     using System;
     using System.Collections.Generic;
     
-    public partial class Wahlpflichtfach
+    public partial class Wahlpflichtfächer
     {
         public int PK_WahlpflichtfachID { get; set; }
         public Nullable<int> Schüler { get; set; }

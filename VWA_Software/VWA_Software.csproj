@@ -86,7 +86,10 @@
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="Core\StundenzahlWarnung.cs" />
     <Compile Include="Core\WPFEnum.cs" />
-    <Compile Include="Datenbank\Ausnahmen_Tabelle.cs">
+    <Compile Include="Datenbank\Ausnahmen.cs">
+      <DependentUpon>SchülerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datenbank\Schüler.cs">
       <DependentUpon>SchülerModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Datenbank\SchülerModel.Context.cs">
@@ -104,10 +107,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SchülerModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Datenbank\Schüler_Tabelle.cs">
-      <DependentUpon>SchülerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datenbank\Wahlpflichtfächer_Tabelle.cs">
+    <Compile Include="Datenbank\Wahlpflichtfächer.cs">
       <DependentUpon>SchülerModel.tt</DependentUpon>
     </Compile>
     <Compile Include="LoginWindow.xaml.cs">
