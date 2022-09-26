@@ -35,11 +35,14 @@
             <Image Source="/Images/Logo.png"
                    HorizontalAlignment="Left"
                    Margin="15,10,0,5"
-                   RenderOptions.BitmapScalingMode="Fant" Grid.ColumnSpan="2"/>
+                   RenderOptions.BitmapScalingMode="Fant" 
+                   Grid.ColumnSpan="2"/>
 
             <StackPanel Grid.Row="0" 
                         Orientation="Horizontal"
-                        HorizontalAlignment="Left" Grid.Column="1" Margin="812,0,0,0">
+                        HorizontalAlignment="Left" 
+                        Grid.Column="1" 
+                        Margin="812,0,0,0">
 
                 <Button x:Name="btnMinimize"
                         Style="{StaticResource MinimizeButtonTheme}"
@@ -73,7 +76,8 @@
 
                 <Border Width="400"
                         Background="#97c121" 
-                        Margin="240,798,360,-819" RenderTransformOrigin="0.5,0.5">
+                        Margin="240,798,360,-819"
+                        RenderTransformOrigin="0.5,0.5">
                     <Border.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>

@@ -200,10 +200,6 @@
     <Resource Include="Images\Minimize_IsMouseOver.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Logo.png" />
-    <Resource Include="Images\Logo_White.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Logo.ico" />
   </ItemGroup>
   <ItemGroup />
@@ -218,6 +214,8 @@
       <DependentUpon>SchülerModel.edmx</DependentUpon>
       <LastGenOutput>SchülerModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\Logo.png" />
+    <Resource Include="Images\Logo_White.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
