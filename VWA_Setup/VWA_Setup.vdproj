@@ -52,12 +52,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_70BB09851D5D35D401574527500E773D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_FC6F67FC05144C55AAF9C4FC5098F207"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -71,6 +65,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_E59C223186C850D653B5AFEE84B50B00"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_70BB09851D5D35D401574527500E773D"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -91,6 +91,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -107,6 +115,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -304,7 +320,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:VWA_Setup"
+        "ProductName" = "8:VWA_Software"
         "ProductCode" = "8:{B0B82789-5217-4A75-924F-04D3AFE409C1}"
         "PackageCode" = "8:{5156828E-4413-4692-B293-3A5D9FB35365}"
         "UpgradeCode" = "8:{844CCD9F-6CB9-4844-9EF2-C4FF21E24AA5}"
