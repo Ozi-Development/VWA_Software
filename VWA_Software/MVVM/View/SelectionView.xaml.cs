@@ -142,14 +142,6 @@ namespace VWA_Software.MVVM.View
                 CheckBox box = thisSender as CheckBox;
                 box.IsChecked = false;
                 warnung.StundenzahlBool = false;
-
-                CheckBox checkBox6 = thisSender as CheckBox;
-
-                string name6 = checkBox6.Name;
-                string name7 = name6.Replace('7', '6');
-
-                CheckBox box2 = FindName(name7) as CheckBox;
-                box2.IsChecked = false;
             }
         }
 
