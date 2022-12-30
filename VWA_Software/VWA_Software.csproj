@@ -101,7 +101,7 @@
     </Compile>
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
-    <Compile Include="Core\StundenzahlWarnung.cs" />
+    <Compile Include="Core\StundenanzahlWarnung.cs" />
     <Compile Include="Core\WPFEnum.cs" />
     <Compile Include="Datenbank\Ausnahmen.cs">
       <DependentUpon>SchülerModel.tt</DependentUpon>

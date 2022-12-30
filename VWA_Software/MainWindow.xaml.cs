@@ -20,9 +20,9 @@ namespace VWA_Software
 
         private void btnEinreichen_Click(object sender, RoutedEventArgs e)
         {
-            StundenzahlWarnung stundenzahlWarnung = new StundenzahlWarnung();
+            StundenanzahlWarnung stundenanzahlWarnung = new StundenanzahlWarnung();
 
-            int stundenzahl = (App.Current as App).Stundenzahl;
+            int stundenanzahl = (App.Current as App).Stundenanzahl;
             int id = (App.Current as App).ID;
 
             List<Wahlpflichtfach> list = new List<Wahlpflichtfach>();
@@ -30,10 +30,10 @@ namespace VWA_Software
             int listCount = list.Count;
 
 
-            if (stundenzahl < 8)
+            if (stundenanzahl < 8)
             {
                 MessageBox.Show(string.Format("Du hast zu wenige Stunden gewählt!\nDir fehlen noch {0} Stunden!",
-                                Convert.ToString(8 - stundenzahl)), "Warnung", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                Convert.ToString(8 - stundenanzahl)), "Warnung", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {

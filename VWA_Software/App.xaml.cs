@@ -11,7 +11,7 @@ namespace VWA_Software
     {
         public List<Wahlpflichtfach> WpfList;
         public int ID { get; set; }
-        public int Stundenzahl { get; set; }
+        public int Stundenanzahl { get; set; }
 
         public App()
         {
